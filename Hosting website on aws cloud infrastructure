@@ -1,0 +1,35 @@
+Deploying an end to end website using aws infrastructure
+
+# Project Aim : To deploy an end to end website on aws cloud infrastructure
+# Services used : EC2, RDS, MYSQL, S3, Route53
+
+# Deploy & configure RDS MYSQL database 
+# Create S3 bucket & select the same region as of RDS DB
+# Setup EC2 server & configure security groups 
+# Allow SSH login to our virtual machine
+# Note: if your're getting timeout or connection refused errors check firewall settings
+# make connection between our host & RDS machine
+
+$ sudo apt update
+$ sudo apt install mysql-client
+
+# copy RDS instance endpoint 
+$ mysql -h <employee.ckilynmwqnxh.us-east-2.rds.amazonaws.com> -u <admin> -p 
+$ Enter password : <Rootuser>
+
+# now we are connected to RDS mysql shell
+
+$ show databases;
+$ create database employee;
+$ use employee;
+$ create table employee(
+-> empid varchar(20),
+-> fname varchar(20),
+-> lname varchar(20),
+-> pri_skill varchar(20),
+-> location varchar(20));
+
+$ show tables;
+$ exit
+
+
